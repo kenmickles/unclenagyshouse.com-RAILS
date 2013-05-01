@@ -1,0 +1,33 @@
+#feature
+  .embed
+    iframe#video src="http://player.vimeo.com/video/#{@episode.vimeo_id}" width="900" height="516" frameborder="0"
+
+  .row-fluid
+    .span9.pull-left
+      h2
+        = "##{@episode.number}: #{@episode.title}"
+        small = " (#{@episode.date.strftime("%B %-d, %Y")})"
+      p.synopsis = @episode.synopsis
+      p.buttons
+        =link_to "Credits", '#', :class => "btn btn-inverse btn-credits", :title => "Show (or hide) the credits for this episode"
+        =link_to "Download", "http://media.sfop.tv/unh#{@episode.pretty_number}.mp4", :class => "btn btn-inverse btn-download", :title => "Download a copy of this episode"
+
+      #credits style="display:none"
+        - %w(crew cast music).each do |category|
+          - if @episode.send(category).length > 0
+            h4 = category.capitalize
+            table
+              - @episode.send(category).each do |credit|
+                tr
+                  th = credit.role
+                  td
+                    - credit.players.each do |player|
+                      - if player.link.present?
+                        =link_to player.name, player.link
+                      - else
+                        span=player.name
+                      br
+
+    - if @next_episode.present?
+      .next-episode.span3.pull-left
+        = render "thumbnail", :episode => @next_episode
