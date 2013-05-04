@@ -5,10 +5,11 @@
   .row-fluid
     .span9.pull-left
       h2
-        = "##{@episode.number}: #{@episode.title}"
+        = "##{@episode.number}: " unless @episode.special?
+        = @episode.title
         small = " (#{@episode.date.strftime("%B %-d, %Y")})"
-      p.synopsis = @episode.synopsis
-      p.buttons
+      .synopsis = markdown @episode.synopsis
+      .buttons
         =link_to "Credits", '#', :class => "btn btn-inverse btn-credits", :title => "Show (or hide) the credits for this episode"
         =link_to "Download", "http://media.sfop.tv/unh#{@episode.pretty_number}.mp4", :class => "btn btn-inverse btn-download", :title => "Download a copy of this episode"
 

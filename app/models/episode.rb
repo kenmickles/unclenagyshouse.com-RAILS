@@ -19,6 +19,10 @@ class Episode < ActiveRecord::Base
     credits_by_category['music'] || []
   end
 
+  def special?
+    !number.match(/([0-9]*)\.([0-9]*)/)
+  end
+
   private
 
   def credits_by_category

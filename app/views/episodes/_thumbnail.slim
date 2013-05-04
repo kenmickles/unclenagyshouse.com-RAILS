@@ -1,4 +1,8 @@
-a.episode href="#{episode_path(episode.pretty_number)}" style="background-image:url(#{image_path "episodes/unh#{episode.pretty_number}.jpg"})"
+a.episode href="#{episode_path(episode.pretty_number)}" style="background-image:url(#{image_path "episodes/#{episode.pretty_number}.jpg"})"
   h3
-    small Episode ##{episode.number}
+    - if episode.special?
+      small Special Presentation
+    - else
+      small Episode ##{episode.number}
+
     =episode.title

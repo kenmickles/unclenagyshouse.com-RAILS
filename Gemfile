@@ -10,6 +10,7 @@ gem 'slim'
 gem 'bourbon'
 gem 'json'
 gem 'jquery-rails'
+gem 'rdiscount'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -39,4 +39,9 @@ describe Episode do
     create(:credit, :episode => ep, :category => "music")
     ep.music.first.should be_a_kind_of Credit
   end
+
+  it "can tell if an episode is special" do
+    build(:episode, :number => "1.05").special?.should be false
+    build(:episode, :number => "moose").special?.should be true
+  end
 end

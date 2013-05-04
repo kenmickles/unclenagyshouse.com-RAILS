@@ -6,4 +6,8 @@ module ApplicationHelper
   def sprite_tag(name, opts={})
     image_tag "s.gif", opts.merge(:class => "#{opts[:class]} #{name}", :alt => (opts[:alt] || ""))
   end
+
+  def markdown(str)
+    RDiscount.new(str).to_html.html_safe unless str.nil?
+  end
 end
