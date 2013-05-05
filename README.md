@@ -1,4 +1,4 @@
-# This is the source code for unclenagyshouse.com
+# This is the source code for [unclenagyshouse.com](http://unclenagyshouse.com)
 
 It's a Rails app that [generates and deploys](https://github.com/kenmickles/unclenagyshouse.com/blob/master/lib/tasks/deploy.sh) a very simple static website.
 
@@ -6,7 +6,7 @@ I know what you're thinking! That's a lot of infrastructure for something that [
 
 (And, yeah, the unit tests are especially overkill, but I wanted to play with Travis CI.)
 
-![](https://api.travis-ci.org/kenmickles/unclenagyshouse.com.png)
+![build status](https://api.travis-ci.org/kenmickles/unclenagyshouse.com.png)
 
 # License
 
