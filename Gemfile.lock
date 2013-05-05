@@ -172,7 +172,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 2.3.1.1)
+  bootstrap-sass (~> 2.3.1.0)
   bourbon
   capybara
   coffee-rails (~> 3.2.1)
