@@ -9,10 +9,12 @@
         = @episode.title
         small = " (#{@episode.date.strftime("%B %-d, %Y")})"
       .synopsis = markdown @episode.synopsis
-      .buttons
+
+      - if @episode.credits.present?
         =link_to "Credits", '#', :class => "btn btn-unh btn-credits", :title => "Show (or hide) the credits for this episode"
-        - if @episode.download_url.present?
-          =link_to "Download", @episode.download_url, :class => "btn btn-unh btn-download", :title => "Download a copy of this episode"
+
+      - if @episode.download_url.present?
+        =link_to "Download", @episode.download_url, :class => "btn btn-unh btn-download", :title => "Download a copy of this episode"
 
       #credits style="display:none"
         - %w(crew cast music).each do |category|
