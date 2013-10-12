@@ -22,6 +22,11 @@ class Episode < ActiveRecord::Base
     !number.match(/([0-9]*)\.([0-9]*)/)
   end
 
+  def download_url
+    return if file_name.blank?
+    "http://media.sfop.tv/#{file_name}"
+  end
+
   private
 
   def credits_by_category

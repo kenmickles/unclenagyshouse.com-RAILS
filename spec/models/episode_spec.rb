@@ -44,4 +44,12 @@ describe Episode do
     build(:episode, :number => "1.05").special?.should be false
     build(:episode, :number => "moose").special?.should be true
   end
+
+  it "returns a valid download_url" do
+    build(:episode, file_name: "moose.mp4").download_url.should eq "http://media.sfop.tv/moose.mp4"
+  end
+
+  it "returns a nil download_url for episodes without a file name" do
+    build(:episode, file_name: nil).download_url.should be_nil
+  end
 end
