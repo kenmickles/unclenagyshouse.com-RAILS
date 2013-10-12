@@ -1,7 +1,6 @@
 class Episode < ActiveRecord::Base
-  attr_accessible :date, :number, :synopsis, :title, :vimeo_id
   validates :title, :presence => true
-  has_many :credits, :order => 'weight'
+  has_many :credits, -> { order "weight" }
 
   def pretty_number
     number.gsub(/\./, '')

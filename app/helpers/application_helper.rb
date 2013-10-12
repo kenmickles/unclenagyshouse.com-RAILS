@@ -1,6 +1,6 @@
 module ApplicationHelper
   def body_class
-    @body_class ||= "#{controller.controller_name.dasherize} #{controller.action_name.dasherize}"
+    @body_class ||= "#{controller.controller_name.dasherize} #{controller.controller_name.dasherize}-#{controller.action_name.dasherize}"
   end
 
   def sprite_tag(name, opts={})

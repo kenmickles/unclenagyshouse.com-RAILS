@@ -2,7 +2,7 @@
 
 class EpisodesController < ApplicationController
   def index
-    @episodes = Episode.all(:order => :date)
+    @episodes = Episode.where(true).order(:date)
   end
 
   def show

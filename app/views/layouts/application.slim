@@ -6,7 +6,8 @@ html lang="en"
     link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/unh-itunes" title="Podcast Feed"
 
     =csrf_meta_tags
-    =stylesheet_link_tag "http://fonts.googleapis.com/css?family=Copse:regular"
+    =stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Lato'
+    =stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Arvo:400,700'
     =stylesheet_link_tag "application", :media => "all"
     =javascript_include_tag "application"
 
@@ -17,9 +18,9 @@ html lang="en"
     .container
       header#header.clearfix
         h1=link_to "Uncle Nagy’s House", root_path
-        .row-fluid
-          p.span10 An independent sitcom from #{link_to "spoonfullofpoo.com", "http://spoonfullofpoo.com"}
-          nav.span2
+        .row
+          p.col-md-10 An independent sitcom from #{link_to "spoonfullofpoo.com", "http://spoonfullofpoo.com"}
+          nav.col-md-2
             =link_to "about", about_path, :class => "about"
             =link_to "contact", contact_path, :class => "contact"
 

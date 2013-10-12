@@ -1,5 +1,4 @@
 class Player < ActiveRecord::Base
-  attr_accessible :facebook_id, :link, :name
   validates :name, :presence => true
   has_and_belongs_to_many :credits
   validates_format_of :link, :with => URI.regexp, :allow_nil => true
