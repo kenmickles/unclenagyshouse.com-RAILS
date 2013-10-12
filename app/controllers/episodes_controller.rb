@@ -9,7 +9,12 @@ class EpisodesController < ApplicationController
     @episode = Episode.where(["REPLACE(number, '.', '') = ?", params[:number]]).first
     raise ActiveRecord::RecordNotFound if @episode.nil?
 
-    @page_title = "Uncle Nagy’s House ##{@episode.number}: #{@episode.title}"
     @next_episode = Episode.where(["date > ?", @episode.date]).order(:date).first
+
+    if @episode.special?
+      @page_title = "Uncle Nagy’s House: #{@episode.title}"
+    else
+      @page_title = "Uncle Nagy’s House ##{@episode.number}: #{@episode.title}"
+    end
   end
 end
