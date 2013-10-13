@@ -32,9 +32,9 @@ html lang="en"
       #content.clearfix
         == yield
 
-      footer#footer.clearfix
-        a.pull-left href="http://spoonfullofpoo.com" ♡ spoonfullofpoo.com 2013
-        nav.pull-right
+      footer#footer.row
+        a.col-md-8 href="http://spoonfullofpoo.com" ♡ spoonfullofpoo.com 2013
+        nav.col-md-4
           =link_to "home", root_path, class: 'home'
           =link_to "about", about_path
           =link_to "contact", "mailto:unclenagyshouse@gmail.com"
