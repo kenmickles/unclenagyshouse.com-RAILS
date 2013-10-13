@@ -69,6 +69,5 @@ UncleNagysHouse::Application.configure do
   config.assets.js_compressor = :uglifier
 
   # basically used for generating proper canonical URLs during deploy
-  config.action_controller.asset_host = "http://unclenagyshouse.com"
   config.action_controller.default_url_options = { :host => 'unclenagyshouse.com', :port => 80 }
 end

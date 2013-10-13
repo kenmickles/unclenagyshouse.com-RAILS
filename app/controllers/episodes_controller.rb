@@ -24,7 +24,7 @@ class EpisodesController < ApplicationController
       'og:site_name' => "Uncle Nagy’s House",
       'og:url' => episode_url(@episode.pretty_number),
       'og:description' => @episode.synopsis,
-      'og:image' => view_context.image_url("episodes/#{@episode.pretty_number}.jpg"),
+      'og:image' => "http://unclenagyshouse.com#{view_context.image_path("episodes/#{@episode.pretty_number}.jpg")}",
       'video:series' => '14480480013',
       'og:video' => "http://vimeo.com/moogaloop.swf?clip_id=#{@episode.vimeo_id}&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1&amp;autoplay=0&amp;loop=0",
       'og:video:height' => '360',

@@ -162,6 +162,7 @@ hr {
     h2 small {
       color: #444;
       margin-left: 3px;
+      font-size: 75%;
     }
 
     .synopsis {
@@ -238,5 +239,34 @@ hr {
 
   nav a {
     margin-left: 20px;
+  }
+}
+
+/**
+ * Phone stuff
+ */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  #content a.episode {
+    margin-left: 0;
+  }
+
+  #footer {
+    font-size: 11px;
+
+    nav a {
+      margin-left: 7px;
+
+      &.home {
+        display: none;
+      }
+    }
   }
 }
