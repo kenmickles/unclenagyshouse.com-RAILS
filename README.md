@@ -1,4 +1,4 @@
-# This is the source code for [unclenagyshouse.com](http://unclenagyshouse.com)
+## This is the source code for [unclenagyshouse.com](http://unclenagyshouse.com)
 
 It's a Rails app that [generates and deploys](https://github.com/kenmickles/unclenagyshouse.com/blob/master/lib/tasks/deploy.sh) a very simple static website.
 
