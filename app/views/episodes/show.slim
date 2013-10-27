@@ -32,6 +32,6 @@
                         span=player.name
                       br
 
-    - if @next_episode.present?
+    - if @episode.next_episode.present?
       .next-episode.col-md-3.pull-left
-        = render "thumbnail", :episode => @next_episode
+        = render "thumbnail", :episode => @episode.next_episode

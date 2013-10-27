@@ -23,4 +23,6 @@ UncleNagysHouse::Application.configure do
 
   # Output pretty (indented) format
   Slim::Engine.set_default_options :pretty => true
+
+  default_url_options[:host] = 'unclenagyshouse.dev'
 end

@@ -52,4 +52,26 @@ describe Episode do
   it "returns a nil download_url for episodes without a file name" do
     build(:episode, file_name: nil).download_url.should be_nil
   end
+
+  it "returns the next chronological episode" do
+    ep = create(:episode, date: Date.today)
+    next_ep = create(:episode, date: Date.tomorrow)
+    ep.next_episode.should eq next_ep
+  end
+
+  it "returns the correct next episode, even if the date is the same" do
+    ep = create(:episode, date: Date.today, number: '3.37')
+    next_ep = create(:episode, date: Date.today, number: '3.38')
+    ep.next_episode.should eq next_ep
+  end
+
+  it "returns a valid open graph hash" do
+    create(:episode).open_graph_tags.keys.sort.should eq %w(fb:app_id og:type og:title og:site_name og:url og:description og:image video:series og:video og:video:height og:video:width og:video:type video:release_date).sort
+  end
+
+  it "returns a valid page title" do
+    create(:episode, title: 'Walrus Shindig', number: '3.37').page_title.should eq "Uncle Nagy’s House #3.37: Walrus Shindig"
+    create(:episode, title: 'Walrus Shindig', number: 'walrus').page_title.should eq "Uncle Nagy’s House: Walrus Shindig"
+    create(:episode, title: 'Walrus Shindig', number: nil).page_title.should eq "Uncle Nagy’s House: Walrus Shindig"
+  end
 end
